@@ -1,0 +1,414 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "BR Segma", sans-serif;
+  color: white;
+  background-color: #0a0f16;
+}
+
+div {
+  /* border: 1px solid white; */
+}
+
+main {
+  background-color: #0f151e;
+  height: calc(100% - 8rem);
+  width: calc(100% - 5rem);
+  padding: 1.5rem 1.5rem;
+  border: none;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .title {
+  /* width: 45%; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title .logo {
+  padding: 0.75rem;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0a0f16;
+  background: linear-gradient(140deg, #6984f6, #7a43ee);
+  border-radius: 0.25rem;
+}
+
+.title .logo h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+@media (max-width: 550px) {
+  .title .logo h4 {
+    font-size: 1.5rem;
+  }
+}
+
+.title .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: start;
+}
+
+.title .info h3,
+p {
+  margin: 0.4rem;
+  font-size: smaller;
+  font-weight: 300;
+  margin: 0;
+}
+
+.title .info h3 {
+  font-size: medium;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 550px) {
+  .title .info h3 {
+    font-size: 0.75em;
+    margin: 0.25rem 0;
+  }
+
+  .title .info p {
+    font-size: x-small;
+    line-height: 1rem;
+  }
+}
+
+.header .options .add {
+  padding: 0.5rem;
+  font-weight: 700;
+  color: #0a0f16;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(50deg, #6984f6, #7a43ee);
+  border-radius: 0.25rem;
+}
+
+.header .options .add:hover {
+  opacity: 0.8;
+}
+
+.header .options .clear {
+  padding: 0.5rem;
+  margin-right: 0.25rem;
+  font-weight: 300;
+  color: white;
+  border: 1px solid #ffffff75;
+  cursor: pointer;
+  background-color: #0a0f16;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 550px) {
+  .header .options .add,
+  .header .options .clear {
+    padding: 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  .header .options .clear {
+    padding: 0.25rem;
+    font-size: 0.65rem;
+    margin-right: 0.5rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .header .options {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.header .options .clear:hover {
+  font-weight: 700;
+  color: #0a0f16;
+  border: 1px solid #0a0f16;
+  background: linear-gradient(50deg, #6984f6, #7a43ee);
+}
+
+.header .options .clear:active {
+  font-weight: 300;
+  color: white;
+  border: 1px solid #ffffff75;
+  background: none;
+  background-color: #0a0f16;
+}
+
+.todo-grid {
+  /* border: 1px solid white; */
+  height: calc(100% - 5rem);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 550px) {
+  .todo-grid {
+    grid-template-columns: 1fr; /* single column */
+    grid-template-rows: repeat(3, 1fr); /* three rows */
+  }
+}
+
+.todo-grid .todo,
+.in-progress,
+.done {
+  height: calc(100% - 2rem);
+  width: calc(100% - 2rem);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #171e28;
+}
+
+.todo-grid h4,
+h5 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.todo-grid h5 {
+  margin: 0.5rem 0;
+  font-weight: 300;
+  font-size: 0.75rem;
+}
+
+.todo-grid .todo,
+.in-progress,
+.done {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: auto;
+}
+
+.todo-grid .card {
+  height: fit-content;
+  background-color: #0f151e;
+  border: 1px solid #0a0f16;
+  box-shadow: 5px 5px 10px #0a0f16;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  cursor: grab;
+}
+
+.card h5 {
+  margin: 0.5rem 0;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.card p {
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: #ffffffb0;
+}
+
+.card .sub-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card .sub-info .created-at p {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.card .sub-info .options {
+  display: flex;
+}
+
+.card .sub-info .options .edit,
+.delete {
+  cursor: pointer;
+}
+
+.card .sub-info .options .edit {
+  margin-right: 0.5rem;
+}
+
+.modal {
+  height: calc(300px - 2rem);
+  width: calc(450px - 2rem);
+  padding: 1rem 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid white;
+  border-radius: 1rem;
+  transform: translate(-50%, -50%);
+  background-color: #0f151e;
+  background-color: #0f151e68;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 550px) {
+  .modal {
+    height: calc(300px - 2rem);
+    width: calc(350px - 2rem);
+    padding: 1rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid white;
+    font-size: small;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.modal h3 {
+  margin: 0;
+}
+
+.modal label {
+  margin-bottom: 0.5rem;
+}
+
+.modal input,
+select,
+textarea,
+button {
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #333;
+  border-radius: 0.5rem;
+}
+
+.modal .layer1 .title {
+  width: calc(70% - 1rem);
+}
+
+.modal .layer1 .title #title {
+  padding: 0 0.5rem;
+}
+
+.modal .layer1 .status {
+  width: 25%;
+}
+
+.modal input,
+select {
+  height: 2rem;
+  width: 100%;
+}
+
+option {
+  appearance: none;
+  cursor: pointer;
+  background-color: #0f151e;
+}
+
+.modal .layer1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal .layer1 .title,
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.modal .layer2 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.modal .layer2 #description {
+  width: calc(100% - 1rem);
+  padding: 0.5rem;
+}
+
+.modal .layer3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal .layer3 .buttons button {
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 550px) {
+  .modal .layer3 .buttons  {
+    display: flex;
+  }
+}
+
+.modal .layer3 .buttons .save {
+  padding: 0.35rem;
+  font-weight: 700;
+  color: #0a0f16;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(50deg, #6984f6, #7a43ee);
+  border-radius: 0.25rem;
+}
+
+
+
+.modal .layer3 .buttons .save:hover {
+  opacity: 0.8;
+}
+
+.modal .layer3 .buttons .cancel {
+  padding: 0.35rem;
+  margin-right: 0.25rem;
+  font-weight: 300;
+  color: white;
+  border: 1px solid #ffffff75;
+  cursor: pointer;
+  background-color: #0a0f16;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 550px) {
+  .modal .layer3 .buttons .cancel {
+  margin-right: 0.5rem;
+}
+}
+
+.modal .layer3 .buttons .cancel:hover {
+  font-weight: 700;
+  color: #0a0f16;
+  border: 1px solid #0a0f16;
+  background: linear-gradient(50deg, #6984f6, #7a43ee);
+}
+
+.modal .layer3 .buttons .cancel:active {
+  font-weight: 300;
+  color: white;
+  border: 1px solid #ffffff75;
+  background: none;
+  background-color: #0a0f16;
+}

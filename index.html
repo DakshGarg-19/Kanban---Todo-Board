@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban - Todo Board</title>
+    <link rel="icon" type="image/png" href="./assets/logoFull.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.cdnfonts.com/css/br-segma" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <div class="modal hide">
+        <h3>New Task</h3>
+        <div class="layer1">
+          <div class="title">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Short title"
+            />
+          </div>
+          <div class="status">
+            <label for="status">Status</label>
+            <select name="status" id="status">
+              <option selected value="todo">To do</option>
+              <option value="inProgress">In Progress</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+        </div>
+        <div class="layer2">
+          <label for="description">Description</label>
+          <textarea
+            name="description"
+            id="description"
+            rows="5"
+            placeholder="Optional details"
+          ></textarea>
+        </div>
+        <div class="layer3">
+          <p>Tip: drag cards between columns.</p>
+          <div class="buttons">
+            <button class="cancel">Cancel</button>
+            <button class="save">Save</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal edit-modal hide">
+        <input type="hidden" id="edit-id" />
+        <h3>New Task</h3>
+        <div class="layer1">
+          <div class="title">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Short title"
+            />
+          </div>
+          <div class="status">
+            <label for="status">Status</label>
+            <select name="status" id="status">
+              <option selected value="todo">To do</option>
+              <option value="inProgress">In Progress</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+        </div>
+        <div class="layer2">
+          <label for="description">Description</label>
+          <textarea
+            name="description"
+            id="description"
+            rows="5"
+            placeholder="Optional details"
+          ></textarea>
+        </div>
+        <div class="layer3">
+          <p>Tip: drag cards between columns.</p>
+          <div class="buttons">
+            <button class="cancel">Cancel</button>
+            <button class="save">Save</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="header">
+        <div class="title">
+          <div class="logo"><h4>K</h4></div>
+          <div class="info">
+            <h3>Kanban — Todo Board</h3>
+            <p>Drag, add, edit and your tasks persist locally.</p>
+          </div>
+        </div>
+        <div class="options">
+          <button class="clear">Clear</button>
+          <button class="add">+ New Task</button>
+        </div>
+      </div>
+      <div class="todo-grid">
+        <div class="todo" data-status="todo">
+          <div class="info">
+            <h4>To do</h4>
+            <h5>0</h5>
+          </div>
+
+          <!-- <div class="card" draggable="true">
+            <h5>Title</h5>
+            <p>Sample task.</p>
+            <div class="sub-info">
+              <div class="created-at">
+                <p>10/11/2025</p>
+              </div>
+              <div class="options">
+                <div class="edit">✏️</div>
+                <div class="delete">🗑️</div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+        <div class="in-progress" data-status="inProgress">
+          <div class="info">
+            <h4>In Progress</h4>
+            <h5>0</h5>
+          </div>
+        </div>
+
+        <div class="done" data-status="done">
+          <div class="info">
+            <h4>Done</h4>
+            <h5>0</h5>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
