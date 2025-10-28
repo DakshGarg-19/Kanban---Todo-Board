@@ -1,4 +1,4 @@
-# Kanban - Local Todo Board
+# Kanban - Todo Board
 
 A fully interactive, drag-and-drop Kanban board built with vanilla HTML, CSS, and JavaScript. All tasks are saved to your browser's local storage, so your board persists between sessions.
 
